@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>80</x>
+      <y>30</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Convert to PNG test
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
