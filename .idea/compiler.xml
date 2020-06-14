@@ -9,6 +9,7 @@
         <module name="umlet-elements" />
         <module name="umlet-swing" />
         <module name="umlet-standalone" />
+        <module name="umlet-res" />
       </profile>
     </annotationProcessing>
   </component>
