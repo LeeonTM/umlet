@@ -162,7 +162,7 @@ public class RelationPointList {
 
 	public Rectangle getDragBox() {
 		PointDouble center = getMiddleLine().getCenter();
-		double size = RelationPointConstants.DRAG_BOX_SIZE / 2;
+		double size = (double) RelationPointConstants.DRAG_BOX_SIZE / 2;
 		Rectangle rectangle = new Rectangle(center.x - size, center.y - size, size * 2, size * 2);
 		return rectangle;
 	}

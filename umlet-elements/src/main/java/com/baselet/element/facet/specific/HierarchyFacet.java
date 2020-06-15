@@ -80,9 +80,9 @@ public class HierarchyFacet extends Facet {
 			DrawHelper.drawActor(drawer, actorHCenter, actorVTop, actorDimension);
 
 			upperLeftPoint = new PointDouble(actorHCenter, actorVTop + actorDimension * 5.5 + ARROW_LENGTH);
-			lowerRightPoint = new PointDouble(actorHCenter - actorDimension * 2, actorVTop + actorDimension * 2.5);
+			lowerRightPoint = new PointDouble((double) actorHCenter - actorDimension * 2, actorVTop + actorDimension * 2.5);
 			drawLinesAndUpperLeftSymbol(lowerRightPoint, drawer, cache, lineWithoutTabs, tabCount, true);
-			textPos = new PointDouble(actorHCenter + actorDimension * 2, actorVTop + actorDimension * 3);
+			textPos = new PointDouble((double) actorHCenter + actorDimension * 2, (double) actorVTop + actorDimension * 3);
 			drawer.print(lineWithoutTabs, textPos, AlignHorizontal.LEFT);
 			updateElementSize(state, lineWithoutTabs, lowerRightPoint, textPos, drawer.textWidth(lineWithoutTabs), DrawHelper.headToLegLength(actorDimension));
 		}
@@ -98,7 +98,7 @@ public class HierarchyFacet extends Facet {
 			drawLinesAndUpperLeftSymbol(lowerRightPoint, drawer, cache, lineWithoutTabs, tabCount, false);
 			textPos = new PointDouble(xPos + fullWidth * 1.15, yPos + fullHeight * 0.8);
 			drawer.print(lineWithoutTabs, textPos, AlignHorizontal.LEFT);
-			updateElementSize(state, lineWithoutTabs, lowerRightPoint, textPos, drawer.textWidth(lineWithoutTabs), fullHeight + SharedConstants.DEFAULT_GRID_SIZE);
+			updateElementSize(state, lineWithoutTabs, lowerRightPoint, textPos, drawer.textWidth(lineWithoutTabs), (double) fullHeight + SharedConstants.DEFAULT_GRID_SIZE);
 		}
 		else if (cache.type == HierarchyType.WorkProcess) {
 			double fullHeight = 40;

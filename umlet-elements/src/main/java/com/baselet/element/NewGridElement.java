@@ -155,7 +155,7 @@ public abstract class NewGridElement implements GridElement {
 		if (SharedConfig.getInstance().isDev_mode()) {
 			drawer.setForegroundColor(ColorOwn.BLACK);
 			drawer.setFontSize(10.5);
-			drawer.print(getId().toString(), new PointDouble(getRealSize().width - 3, getRealSize().height - 2), AlignHorizontal.RIGHT);
+			drawer.print(getId().toString(), new PointDouble((double) getRealSize().width - 3, (double) getRealSize().height - 2), AlignHorizontal.RIGHT);
 		}
 		drawer.resetColorSettings();
 		if (SharedConfig.getInstance().isShow_stickingpolygon()) {

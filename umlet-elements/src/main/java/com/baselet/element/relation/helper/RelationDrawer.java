@@ -23,7 +23,7 @@ public class RelationDrawer {
 	private static final double DIAGONAL_CROSS_LENGTH = RelationPointConstants.POINT_SELECTION_RADIUS * 0.9;
 	private static final double BOX_SIZE = 20;
 
-	public static final double SMALL_CIRCLE_RADIUS = RelationPointConstants.POINT_SELECTION_RADIUS / 2;
+	public static final double SMALL_CIRCLE_RADIUS = (double) RelationPointConstants.POINT_SELECTION_RADIUS / 2;
 	public static final double MIDDLE_CIRCLE_RADIUS = RelationPointConstants.POINT_SELECTION_RADIUS;
 	public static final double LARGE_CIRCLE_RADIUS = MIDDLE_CIRCLE_RADIUS * 3;
 
@@ -185,7 +185,7 @@ public class RelationDrawer {
 			drawer.setBackgroundColor(bg);
 		}
 		if (drawCross) {
-			double length = RelationPointConstants.POINT_SELECTION_RADIUS / 2;
+			double length = (double) RelationPointConstants.POINT_SELECTION_RADIUS / 2;
 			drawer.drawLine(point.getX() - length, point.getY(), point.getX() + length, point.getY());
 			drawer.drawLine(point.getX(), point.getY() - length, point.getX(), point.getY() + length);
 		}

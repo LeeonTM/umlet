@@ -321,12 +321,12 @@ public class PlotDrawHandler {
 		boolean drawHorizontalMarkers = !axisConfig.isxDescription() && axisConfig.drawDescriptionAxisMarkers() || axisConfig.isxDescription() && axisConfig.drawValueAxisMarkers();
 		if (drawVerticalMarkers) {
 			for (Integer x : xpoints) {
-				base.drawLine(x, axisConfig.getxAxisPos(), x, axisConfig.getxAxisPos() + AxisConfig.ARROW_SIZE);
+				base.drawLine(x, axisConfig.getxAxisPos(), x, (double) axisConfig.getxAxisPos() + AxisConfig.ARROW_SIZE);
 			}
 		}
 		if (drawHorizontalMarkers) {
 			for (Integer y : ypoints) {
-				base.drawLine(axisConfig.getyAxisPos() - AxisConfig.ARROW_SIZE, y, axisConfig.getyAxisPos(), y);
+				base.drawLine((double) axisConfig.getyAxisPos() - AxisConfig.ARROW_SIZE, y, axisConfig.getyAxisPos(), y);
 			}
 		}
 	}
@@ -336,12 +336,12 @@ public class PlotDrawHandler {
 		boolean drawHorizontalMarkerTexts = !axisConfig.isxDescription() && axisConfig.drawDescriptionAxisMarkerText() || axisConfig.isxDescription() && axisConfig.drawValueAxisMarkerText();
 		if (drawVerticalMarkerTexts) {
 			for (int i = 0; i < xpoints.size(); i++) {
-				base.print(xtext.get(i), xpoints.get(i), axisConfig.getxAxisPos() + AxisConfig.ARROW_DISTANCE, AlignHorizontal.CENTER);
+				base.print(xtext.get(i), xpoints.get(i), (double) axisConfig.getxAxisPos() + AxisConfig.ARROW_DISTANCE, AlignHorizontal.CENTER);
 			}
 		}
 		if (drawHorizontalMarkerTexts) {
 			for (int i = 0; i < ypoints.size(); i++) {
-				base.print(ytext.get(i), axisConfig.getyAxisPos() - 8, (int) (ypoints.get(i) + base.textHeightMax() / 2), AlignHorizontal.RIGHT);
+				base.print(ytext.get(i), (double) axisConfig.getyAxisPos() - 8, (int) (ypoints.get(i) + base.textHeightMax() / 2), AlignHorizontal.RIGHT);
 			}
 		}
 	}
@@ -420,18 +420,18 @@ public class PlotDrawHandler {
 
 				if (xIsDescription) {
 					if (barLength > 0) {
-						base.drawRectangle(subBarIterator + ownvar, sourceAxisPos - barLength, barWidth, barLength);
+						base.drawRectangle((double) subBarIterator + ownvar, (double) sourceAxisPos - barLength, barWidth, barLength);
 					}
 					else {
-						base.drawRectangle(subBarIterator + ownvar, sourceAxisPos, barWidth, -barLength);
+						base.drawRectangle((double) subBarIterator + ownvar, sourceAxisPos, barWidth, -barLength);
 					}
 				}
 				else {
 					if (barLength > 0) {
-						base.drawRectangle(sourceAxisPos, subBarIterator + ownvar, barLength, barWidth);
+						base.drawRectangle(sourceAxisPos, (double) subBarIterator + ownvar, barLength, barWidth);
 					}
 					else {
-						base.drawRectangle(sourceAxisPos + barLength, subBarIterator + ownvar, -barLength, barWidth);
+						base.drawRectangle((double) sourceAxisPos + barLength, (double) subBarIterator + ownvar, -barLength, barWidth);
 					}
 				}
 

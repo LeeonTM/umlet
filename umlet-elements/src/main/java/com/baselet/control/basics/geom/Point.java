@@ -36,8 +36,8 @@ public class Point {
 	}
 
 	public double distance(Point o) {
-		double distX = o.getX() - getX();
-		double distY = o.getY() - getY();
+		double distX = (double) o.getX() - getX();
+		double distY = (double) o.getY() - getY();
 		return Math.sqrt(distX * distX + distY * distY);
 	}
 

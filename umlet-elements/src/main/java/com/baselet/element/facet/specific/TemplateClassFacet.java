@@ -79,7 +79,7 @@ public class TemplateClassFacet extends FirstRunKeyValueFacet {
 				start);
 		// SET BUFFERS FOR REDUCED CLASS BORDER
 		state.getBuffer().setTopMin(tR.getHeight());
-		state.getBuffer().addToRight(width - classWidth);
+		state.getBuffer().addToRight((double) width - classWidth);
 		// DRAW BACKGROUND RECT
 		Style style = drawer.getStyleClone();
 		drawer.setForegroundColor(ColorOwn.TRANSPARENT);
@@ -93,7 +93,7 @@ public class TemplateClassFacet extends FirstRunKeyValueFacet {
 		// DRAW PARTIAL CLASS BORDER
 		drawer.drawLines(p.get(1), p.get(0), p.get(7), p.get(6), p.get(5));
 		// DRAW TEMPLATE TEXT
-		drawer.print(templateClassText, width - drawer.getDistanceBorderToText(), tR.getHeight() - LOWER_SPACE, AlignHorizontal.RIGHT);
+		drawer.print(templateClassText, width - drawer.getDistanceBorderToText(), (double) tR.getHeight() - LOWER_SPACE, AlignHorizontal.RIGHT);
 		return p;
 	}
 

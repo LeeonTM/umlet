@@ -91,19 +91,19 @@ public class GeometricFunctions {
 				// TOP
 				getIntersectionPoint(line,
 						new Line(new PointDouble(rectangle.getX(), rectangle.getY()),
-								new PointDouble(rectangle.getX() + rectangle.getWidth(), rectangle.getY()))),
+								new PointDouble((double) rectangle.getX() + rectangle.getWidth(), rectangle.getY()))),
 				// BOTTOM
 				getIntersectionPoint(line,
 						new Line(new PointDouble(rectangle.getX(), rectangle.getY() + rectangle.getHeight()),
-								new PointDouble(rectangle.getX() + rectangle.getWidth(), rectangle.getY() + rectangle.getHeight()))),
+								new PointDouble((double) rectangle.getX() + rectangle.getWidth(), rectangle.getY() + rectangle.getHeight()))),
 				// LEFT
 				getIntersectionPoint(line,
 						new Line(new PointDouble(rectangle.getX(), rectangle.getY()),
-								new PointDouble(rectangle.getX(), rectangle.getY() + rectangle.getHeight()))),
+								new PointDouble(rectangle.getX(), (double) rectangle.getY() + rectangle.getHeight()))),
 				// RIGHT
 				getIntersectionPoint(line,
-						new Line(new PointDouble(rectangle.getX() + rectangle.getWidth(), rectangle.getY()),
-								new PointDouble(rectangle.getX() + rectangle.getWidth(), rectangle.getY() + rectangle.getHeight()))));
+						new Line(new PointDouble((double) rectangle.getX() + rectangle.getWidth(), rectangle.getY()),
+								new PointDouble((double) rectangle.getX() + rectangle.getWidth(), (double) rectangle.getY() + rectangle.getHeight()))));
 
 		// remove nulls
 		List<PointDouble> returnList = new ArrayList<PointDouble>();

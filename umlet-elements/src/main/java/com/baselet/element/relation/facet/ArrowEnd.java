@@ -54,7 +54,7 @@ abstract class ArrowEnd implements RegexValueHolder {
 	static ArrowEnd SMALL_CIRCLE = new ArrowEnd("o") {
 		@Override
 		public void print(DrawHandler drawer, Line lineToDraw, boolean drawOnLineStart, String matchedText, ResizableObject resizableObject) {
-			PointDouble point = lineToDraw.getPointOnLineWithDistanceFrom(drawOnLineStart, RelationPointConstants.POINT_SELECTION_RADIUS * 2);
+			PointDouble point = lineToDraw.getPointOnLineWithDistanceFrom(drawOnLineStart, (double) RelationPointConstants.POINT_SELECTION_RADIUS * 2);
 			RelationDrawer.drawCircle(point, RelationDrawer.SMALL_CIRCLE_RADIUS, drawer, lineToDraw, drawOnLineStart, resizableObject, null, false);
 		}
 	};
@@ -93,7 +93,7 @@ abstract class ArrowEnd implements RegexValueHolder {
 	static ArrowEnd LEFT_ZERO_TO_MANY = new ArrowEnd(">o") {
 		@Override
 		public void print(DrawHandler drawer, Line lineToDraw, boolean drawOnLineStart, String matchedText, ResizableObject resizableObject) {
-			PointDouble point = lineToDraw.getPointOnLineWithDistanceFrom(drawOnLineStart, RelationPointConstants.POINT_SELECTION_RADIUS * 2);
+			PointDouble point = lineToDraw.getPointOnLineWithDistanceFrom(drawOnLineStart, (double) RelationPointConstants.POINT_SELECTION_RADIUS * 2);
 			RelationDrawer.drawCircle(point, RelationDrawer.SMALL_CIRCLE_RADIUS, drawer, lineToDraw, drawOnLineStart, resizableObject, null, false);
 			RelationDrawer.drawArrowToLine(drawer, lineToDraw, drawOnLineStart, ArrowEndType.NORMAL, false, true);
 		}
@@ -175,7 +175,7 @@ abstract class ArrowEnd implements RegexValueHolder {
 	static ArrowEnd RIGHT_ZERO_TO_MANY = new ArrowEnd("o<") {
 		@Override
 		public void print(DrawHandler drawer, Line lineToDraw, boolean drawOnLineStart, String matchedText, ResizableObject resizableObject) {
-			PointDouble point = lineToDraw.getPointOnLineWithDistanceFrom(drawOnLineStart, RelationPointConstants.POINT_SELECTION_RADIUS * 2);
+			PointDouble point = lineToDraw.getPointOnLineWithDistanceFrom(drawOnLineStart, (double) RelationPointConstants.POINT_SELECTION_RADIUS * 2);
 			RelationDrawer.drawCircle(point, RelationDrawer.SMALL_CIRCLE_RADIUS, drawer, lineToDraw, drawOnLineStart, resizableObject, null, false);
 			RelationDrawer.drawArrowToLine(drawer, lineToDraw, drawOnLineStart, ArrowEndType.NORMAL, false, true);
 		}

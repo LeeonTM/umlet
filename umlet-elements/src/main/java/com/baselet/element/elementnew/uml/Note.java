@@ -27,8 +27,8 @@ public class Note extends NewGridElement {
 		DrawHandler drawer = state.getDrawer();
 		int w = getRealSize().width;
 		int h = getRealSize().height;
-		drawer.drawLines(p(0, 0), p(w - CORNER, 0), p(w, CORNER), p(w, h), p(0, h), p(0, 0));
-		drawer.drawLines(p(w - CORNER, 0), p(w - CORNER, CORNER), p(w, CORNER));
+		drawer.drawLines(p(0, 0), p((double) w - CORNER, 0), p(w, CORNER), p(w, h), p(0, h), p(0, 0));
+		drawer.drawLines(p((double) w - CORNER, 0), p((double) w - CORNER, CORNER), p(w, CORNER));
 	}
 
 	private PointDouble p(double x, double y) {

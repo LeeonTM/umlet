@@ -131,9 +131,9 @@ public class StickingPolygon {
 
 	public void addRectangle(int x, int y, int width, int height) {
 		addPoint(x, y);
-		addPoint(x + width, y);
-		addPoint(x + width, y + height);
-		addPoint(x, y + height, true);
+		addPoint((double) x + width, y);
+		addPoint((double) x + width, y + height);
+		addPoint(x, (int) ((double) y + height), true);
 	}
 
 	public void addRectangle(Rectangle rect) {

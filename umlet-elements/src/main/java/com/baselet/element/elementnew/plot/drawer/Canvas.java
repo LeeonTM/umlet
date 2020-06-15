@@ -196,9 +196,9 @@ public class Canvas {
 	public void draw(DrawHandler baseDrawHandler) {
 		baseDrawHandler.setBackgroundColor(ColorOwn.TRANSPARENT);
 		baseDrawHandler.setForegroundColor(ColorOwn.RED.transparency(Transparency.BACKGROUND));
-		baseDrawHandler.drawRectangle(getOuterLeftPos(), getOuterUpPos(), getOuterRightPos() - getOuterLeftPos() - 1, getOuterDownPos() - getOuterUpPos());
+		baseDrawHandler.drawRectangle(getOuterLeftPos(), getOuterUpPos(), getOuterRightPos() - (double) getOuterLeftPos() - 1,  (double)getOuterDownPos() - getOuterUpPos());
 		baseDrawHandler.setForegroundColor(ColorOwn.BLUE);
-		baseDrawHandler.drawRectangle(getInnerLeftPos(), getInnerUpPos(), getInnerRightPos() - getInnerLeftPos(), getInnerDownPos() - getInnerUpPos());
+		baseDrawHandler.drawRectangle(getInnerLeftPos(), getInnerUpPos(), getInnerRightPos() - (double) getInnerLeftPos(), (double) getInnerDownPos() - getInnerUpPos());
 	}
 
 }

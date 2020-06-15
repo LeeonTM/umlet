@@ -122,7 +122,7 @@ public class Stickables {
 		PointDouble stickablePointWithDiff = new PointDouble(stickablePoint.getX() + diffX, stickablePoint.getY() + diffY);
 		// if the line length has not changed, the point must be moved like the line
 		if (oldLine.getLength() == newLine.getLength()) {
-			return new PointDouble(newLine.getStart().getX().intValue() - oldLine.getStart().getX().intValue(), newLine.getStart().getY().intValue() - oldLine.getStart().getY().intValue());
+			return new PointDouble((double) newLine.getStart().getX().intValue() - oldLine.getStart().getX().intValue(), (double) newLine.getStart().getY().intValue() - oldLine.getStart().getY().intValue());
 		}
 		// if line length has changed and the changed stickablePoint is not on line anymore, it will move to the nearest newLineend (start or end of line)
 		else if (newLine.getDistanceToPoint(stickablePointWithDiff) > 1) {
