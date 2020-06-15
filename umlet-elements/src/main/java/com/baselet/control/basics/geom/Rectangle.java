@@ -55,7 +55,7 @@ public class Rectangle {
 	}
 
 	public PointDouble getCenter() {
-		return new PointDouble((double) x + width / 2, (double) y + height / 2);
+		return new PointDouble((double) x + (double) width / 2, (double) y + (double) height / 2);
 	}
 
 	public void setY(int y) {
