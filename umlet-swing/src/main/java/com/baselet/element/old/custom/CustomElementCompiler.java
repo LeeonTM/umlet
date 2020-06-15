@@ -129,16 +129,25 @@ public class CustomElementCompiler {
 	// loads the source from a file
 	private String loadJavaSource(File sourceFile) { // LME3
 		StringBuilder sb = new StringBuilder("");
+		BufferedReader br = null;
 		if (sourceFile != null && sourceFile.getName().endsWith(".java")) {
 			try {
-				BufferedReader br = new BufferedReader(new FileReader(sourceFile));
+				br = new BufferedReader(new FileReader(sourceFile));
 				String line;
 				while ((line = br.readLine()) != null) {
 					sb.append(line).append(Constants.NEWLINE);
 				}
-				br.close();
 			} catch (Exception e) {
 				log.error(null, e);
+			}
+			finally {
+				if (br != null) {
+					try {
+						br.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 		return sb.toString().replaceAll("\r\n", Constants.NEWLINE);
