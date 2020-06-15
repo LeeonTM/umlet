@@ -297,7 +297,7 @@ public class MainStandalone {
 			Path.safeCreateFile(f, false);
 			new Timer("alreadyRunningChecker", true).schedule(new RunningFileChecker(tmpFile(), Main.getInstance()), 0, 1000);
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			log.error(ex.getMessage());
 			return true;
 		}
 		return false;

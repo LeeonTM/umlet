@@ -6,8 +6,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import com.baselet.control.util.Path;
+import com.baselet.diagram.draw.TextSplitter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FileClassLoader extends ClassLoader {
+	private static final Logger log = LoggerFactory.getLogger(FileClassLoader.class);
 
 	public FileClassLoader() {
 		super();
@@ -43,10 +47,13 @@ public class FileClassLoader extends ClassLoader {
 			dis.readFully(buff);
 			f.deleteOnExit();
 		} catch(Exception ex) {
-			ex.printStackTrace();
+			log.error(ex.getMessage());
 		} finally {
 			if (dis != null) {
 				dis.close();
+			}
+			if (fis != null) {
+				fis.close();
 			}
 		}
 		return buff;

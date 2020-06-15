@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.baselet.diagram.draw.TextSplitter;
 import org.eclipse.jdt.core.compiler.batch.BatchCompiler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,7 +67,7 @@ public class CustomElementCompiler {
 					global_error = true;
 				}
 			} catch (Exception ex) {
-				ex.printStackTrace();
+				log.error(ex.getMessage());
 			}
 		}
 		else {
@@ -145,7 +146,7 @@ public class CustomElementCompiler {
 					try {
 						br.close();
 					} catch (IOException e) {
-						e.printStackTrace();
+						log.error(e.getMessage());
 					}
 				}
 			}
@@ -167,7 +168,7 @@ public class CustomElementCompiler {
 				try {
 					bw.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					log.error(e.getMessage());
 				}
 			}
 		}

@@ -214,6 +214,8 @@ public class DiagramFileHandler {
 
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			dbf.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+			dbf.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 			db = dbf.newDocumentBuilder();
 			Document doc = db.newDocument();
 
@@ -243,6 +245,8 @@ public class DiagramFileHandler {
 			StreamResult result = new StreamResult(stringWriter);
 
 			TransformerFactory transFactory = TransformerFactory.newInstance();
+			transFactory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+			transFactory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
 			Transformer transformer = transFactory.newTransformer();
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
@@ -269,6 +273,8 @@ public class DiagramFileHandler {
 				spf.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
 			}
 			SAXParser parser = spf.newSAXParser();
+			parser.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+			parser.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 			FileInputStream input = new FileInputStream(file);
 			InputHandler xmlhandler = new InputHandler(handler);
 			parser.parse(input, xmlhandler);
@@ -400,7 +406,7 @@ public class DiagramFileHandler {
 
 	/**
 	 * If the filename of the filechooser has no extension, the extension from the filefilter is added to the name
-	 * @param saveFileChooser2
+	 * @param fileChooser
 	 */
 	private File getFileWithExtension(JFileChooser fileChooser) {
 		String extension = "." + fileextensions.get(fileChooser.getFileFilter());

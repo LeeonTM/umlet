@@ -21,7 +21,10 @@ import com.baselet.control.enums.generator.SignatureOptions;
 import com.baselet.control.enums.generator.SortOptions;
 import com.baselet.control.util.Path;
 import com.baselet.control.util.RecentlyUsedFilesList;
+import com.baselet.diagram.draw.TextSplitter;
 import com.baselet.gui.BaseGUI;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static com.baselet.control.constants.Constants.exportFormatList;
 
@@ -73,6 +76,8 @@ public class ConfigHandler {
 	private static final String GENERATE_CLASS_METHODS = "generate_class_methods";
 	private static final String GENERATE_CLASS_SIGNATURES = "generate_class_signatures";
 	private static final String GENERATE_CLASS_SORTINGS = "generate_class_sortings";
+
+	private static final Logger log = LoggerFactory.getLogger(ConfigHandler.class);
 
 	public static void loadConfig() {
 
@@ -247,7 +252,7 @@ public class ConfigHandler {
 				outStream.close();
 			}
 		} catch (IOException ex) {
-			ex.printStackTrace();
+			log.error(ex.getMessage());
 		}
 	}
 
@@ -275,7 +280,7 @@ public class ConfigHandler {
 				inputStream.close();
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			log.error(ex.getMessage());
 		}
 
 		return result;
